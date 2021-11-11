@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -64,3 +65,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# gridpost
+This is a challenge given by OS Systems . I was tasked with creating a Grid Post System that has the features to create Edite and delete.
+
+The project contained a form to input data and grid to navigate stored data:
+
+1. Form has 4 fields:
+a. image
+b. category
+c. title
+d. description
+
+2. Grid should have:
+✔ actions to create, edit or delete records
+✔ filter field to search records by title
+>>>>>>> bbd3e5887aa851393f0d22a7e27e249ec0d19f0d
