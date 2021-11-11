@@ -6,7 +6,7 @@
         </ul>
         <ul class="nav">
             <li class="nav-item"><a href="{{url('/logout')}}" class="nav-link link-dark px-2">Log Out</a></li>
-            <li class="nav-item"><a href="{{url('/dashboard')}}" class="nav-link link-dark px-2">Dashboard</a></li>
+
         </ul>
     </div>
 </nav>

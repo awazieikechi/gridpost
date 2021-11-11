@@ -31,7 +31,14 @@ class BlogController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $actionBtn = '<a href="./post/edit/' . $row->id . '" class="edit btn btn-success btn-sm">Edit</a>
-                    <a href="./post/delete/' . $row->id . '" class="delete btn btn-danger btn-sm">Delete</a>';
+                    <form action="./post/delete" method="POST">
+                    ' . csrf_field() . '
+                    <input type="hidden" value="' . $row->id . '" name="id">
+                   
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm(\'Are You Sure Want to Delete?\')"
+                        >Delete</a>
+                    </form>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -66,7 +73,8 @@ class BlogController extends Controller
 
     public function delete(Request $request)
     {
-        $blog = Blog::find($request->id)->delete();
+
+        Blog::find($request->id)->delete();
         return redirect('/blog')->with('success', 'Blog Post has been deleted ');
     }
 

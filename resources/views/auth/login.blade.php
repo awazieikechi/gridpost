@@ -8,6 +8,7 @@
                 <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <h2> Sign in to Manage Your Posts</h2>
                 <form method="POST" action="{{ route('login') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <!-- Email input -->

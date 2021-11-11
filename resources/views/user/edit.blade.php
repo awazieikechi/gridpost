@@ -48,7 +48,7 @@
 
         <!-- Image-->
         <label class="form-label" for="customFile">Upload Image</label>
-        <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="customFile" />
+        <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="customFile" /><br>
         @error('image')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

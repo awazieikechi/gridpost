@@ -22,10 +22,6 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/logout', [UserController::class, 'destroy']);
 
 Route::middleware(['auth'])->group(function () {
-    /** Admin Portal */
-    //Route::get('/dashboard/blog', [UserController::class, 'getPosts'])->name('blog.listings');
-    Route::get('/dashboard/blog', [UserController::class, 'showPosts'])->name('blogs.posts');
-    Route::get('/dashboard/', [UserController::class, 'showDashboard'])->name('show.dashbard');
 
     /** User Portal */
     Route::get('user/blog', [BlogController::class, 'getPosts'])->name('blogs.listing');
@@ -34,8 +30,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/createpost', [BlogController::class, 'create'])->name('blog.show');
     Route::get('/post/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
     Route::post('/post/edit', [BlogController::class, 'update'])->name('blog.update');
-    Route::delete('/post/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
-
-    // Route::get('/home', [UserController::class, 'showDashboard']);
-    // Route::post('/home', [UserController::class, 'showDashboard'])->name('delete.custom');
+    Route::match(['get', 'post'], '/post/delete/', [BlogController::class, 'delete'])->name('blog.delete');
 });
